@@ -4,7 +4,6 @@ import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert
 import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
-import java.lang.Exception
 
 object Users : Table() {
     private val login = Users.varchar("login", 25)
@@ -18,14 +17,14 @@ object Users : Table() {
                 it[login] = userDTO.login
                 it[password] = userDTO.password
                 it[username] = userDTO.username
-                it[email] = userDTO.email
+                it[email] = userDTO.email ?: ""
             }
         }
     }
 
     fun fetchUser(login: String): UserDTO? {
         return try {
-             transaction {
+            transaction {
                 val userModel = Users.select { Users.login.eq(login) }.single()
                 UserDTO(
                     login = userModel[Users.login],

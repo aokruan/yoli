@@ -10,12 +10,13 @@ import ru.yoli.features.database.users.Users
 import java.util.*
 
 class LoginController(private val call: ApplicationCall) {
+
     suspend fun performLogin() {
         val receive = call.receive<LoginReceiveRemote>()
         val userDTO = Users.fetchUser(receive.login)
 
         if (userDTO == null) {
-            call.respond(HttpStatusCode.BadRequest, "User not found.")
+            call.respond(HttpStatusCode.BadRequest, "User not found")
         } else {
             if (userDTO.password == receive.password) {
                 val token = UUID.randomUUID().toString()
@@ -25,9 +26,10 @@ class LoginController(private val call: ApplicationCall) {
                         token = token
                     )
                 )
+
                 call.respond(LoginResponseRemote(token = token))
             } else {
-                call.respond(HttpStatusCode.BadRequest, "Invalid password.")
+                call.respond(HttpStatusCode.BadRequest, "Invalid password")
             }
         }
     }
