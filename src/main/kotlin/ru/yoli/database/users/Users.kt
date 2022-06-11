@@ -1,4 +1,4 @@
-package ru.yoli.features.database.users
+package ru.yoli.database.users
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert

@@ -1,4 +1,4 @@
-package ru.yoli.features.cache
+package ru.yoli.cache
 
 import ru.yoli.features.register.RegisterReceiveRemote
 

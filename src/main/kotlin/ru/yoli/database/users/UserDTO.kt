@@ -1,4 +1,4 @@
-package ru.yoli.features.database.users
+package ru.yoli.database.users
 
 class UserDTO(
     val login: String,

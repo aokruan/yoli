@@ -5,11 +5,11 @@ import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import org.jetbrains.exposed.exceptions.ExposedSQLException
-import ru.yoli.features.database.tokens.TokenDTO
-import ru.yoli.features.database.tokens.Tokens
-import ru.yoli.features.database.users.UserDTO
-import ru.yoli.features.database.users.Users
-import ru.yoli.features.utils.isValidEmail
+import ru.yoli.database.tokens.TokenDTO
+import ru.yoli.database.tokens.Tokens
+import ru.yoli.database.users.UserDTO
+import ru.yoli.database.users.Users
+import ru.yoli.utils.isValidEmail
 import java.util.*
 
 class RegisterController(private val call: ApplicationCall) {

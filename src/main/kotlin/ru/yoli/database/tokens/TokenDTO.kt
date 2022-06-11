@@ -1,4 +1,4 @@
-package ru.yoli.features.database.tokens
+package ru.yoli.database.tokens
 
 class TokenDTO(
     val rowId: String,

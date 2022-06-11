@@ -3,6 +3,7 @@ package ru.yoli
 import io.ktor.server.cio.*
 import io.ktor.server.engine.*
 import org.jetbrains.exposed.sql.Database
+import ru.yoli.features.games.configureGameRouting
 import ru.yoli.features.login.configureLoginRouting
 import ru.yoli.features.register.configureRegisterRouting
 import ru.yoli.plugins.configureRouting
@@ -18,6 +19,7 @@ fun main() {
         configureRouting()
         configureLoginRouting()
         configureRegisterRouting()
+        configureGameRouting()
         configureSerialization()
     }.start(wait = true)
 }

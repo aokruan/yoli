@@ -1,4 +1,4 @@
-package ru.yoli.features.database.tokens
+package ru.yoli.database.tokens
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert
@@ -27,8 +27,8 @@ object Tokens : Table() {
                     .map {
                         TokenDTO(
                             rowId = it[Tokens.id],
-                            token = it[Tokens.token],
-                            login = it[Tokens.login]
+                            token = it[token],
+                            login = it[login]
                         )
                     }
             }

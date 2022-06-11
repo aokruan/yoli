@@ -4,9 +4,9 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import ru.yoli.features.database.tokens.TokenDTO
-import ru.yoli.features.database.tokens.Tokens
-import ru.yoli.features.database.users.Users
+import ru.yoli.database.tokens.TokenDTO
+import ru.yoli.database.tokens.Tokens
+import ru.yoli.database.users.Users
 import java.util.*
 
 class LoginController(private val call: ApplicationCall) {

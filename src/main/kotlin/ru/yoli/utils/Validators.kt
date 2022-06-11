@@ -1,3 +1,3 @@
-package ru.yoli.features.utils
+package ru.yoli.utils
 
 fun String.isValidEmail(): Boolean = true
