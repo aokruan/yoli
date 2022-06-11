@@ -1,0 +1,1 @@
+web: ./build/install/ru.yoli.yoli/bin/ru.yoli.yoli

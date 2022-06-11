@@ -27,6 +27,9 @@ dependencies {
     implementation("io.ktor:ktor-server-core-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-content-negotiation-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-cio-jvm:$ktor_version")
+    implementation("io.ktor:ktor-server-netty:$ktor_version")
+
+    implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
 
     // Exposed
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
@@ -35,11 +38,17 @@ dependencies {
 
     // Postgresql
     implementation("org.postgresql:postgresql:42.2.2")
+    implementation("com.zaxxer:HikariCP:5.0.1")
 
     // Serializer
     implementation("io.ktor:ktor-serialization-kotlinx-json:$ktor_version")
 
     implementation("ch.qos.logback:logback-classic:$logback_version")
+    implementation("io.netty:netty-parent:4.1.77.Final")
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
+}
+
+tasks.create("stage") {
+    dependsOn("installDist")
 }
